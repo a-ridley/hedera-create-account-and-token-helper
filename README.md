@@ -1,11 +1,11 @@
 # Hedera Create Accounts and Tokens Helper
-This project creates four Hedera Testnet accounts with a balance of 10 HBAR. It creates a Fungible Token with an initial supply of 100 and mints four NFTs.
+This project creates four Hedera Testnet accounts with a balance of 10 HBAR. It creates a Fungible Token with an initial supply of 100 and mints five NFTs.
 
 ### Description of Accounts Created
 Accounts created:
-* Account 1: An ED25519 account that acts as a **Sender**. This account is the owner of the Fungible Token created and the four minted NFTs.
+* Account 1: An ED25519 account that acts as a **Sender**. This account is the owner of the Fungible Token created and the five minted NFTs.
 * Account 2: An ED25519 account that acts as a **Receiver**. This account has zero FT's and NFTs.
-* Account 3: An ECDSA account with an alias that acts as a **Sender**. This account is the owner of another Fungible Token created and another four minted NFTs.
+* Account 3: An ECDSA account with an alias that acts as a **Sender**. This account is the owner of another Fungible Token created and another five minted NFTs.
 * Account 4: An ECDSA account with an alias that acts as a **Reciever**. This account has zero FT's and NFTs.
 
 ## How to Use
