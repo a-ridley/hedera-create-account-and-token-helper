@@ -1,5 +1,5 @@
-# Hedera Create Accounts and Tokens Helper
-This project creates four Hedera Testnet accounts with a balance of 10 HBAR. It creates a Fungible Token with an initial supply of 100 and mints five NFTs.
+# Hedera Create Accounts with Tokens Helper
+This project creates four Hedera Testnet accounts with a balance of 10 HBAR where two of the accounts are owners of Fungible tokens, and 4 NFTs.
 
 ### Description of Accounts Created
 Accounts created:
