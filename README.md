@@ -9,7 +9,7 @@ Accounts created:
 * Account 4: An ECDSA account with an alias that acts as a **Reciever**. This account has zero FT's and NFTs.
 
 ## How to Use
-1. Create a Hedera Testnet account at [portal.hedera.com](portal.hedera.com). Your account will receive 10,000 test HBAR every 24 hours.
+1. Create a Hedera Testnet account at [portal.hedera.com](https://portal.hedera.com/register). Your account will receive 10,000 test HBAR every 24 hours.
 2. Rename the `.env.sample` file to `.env` and add the credentials from your Hedera Testnet account.
 3. In the projects root directory run `npm i`
 4. run `node index.js` to execute
