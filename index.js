@@ -230,11 +230,11 @@ const accountAndTokenCreation = async () => {
     ecdsaWithAlias: {
       sender: {
         accountId: ecdsaSenderAccountId.toString(),
-        privateKey: ecdsaSenderPrivateKey.toString(),
+        privateKey: ecdsaSenderPrivateKey.toStringRaw(),
       },
       receiver: {
         accountId: ecdsaReceiverAccountId.toString(),
-        privateKey: ecdsaReceiverPrivateKey.toString(),
+        privateKey: ecdsaReceiverPrivateKey.toStringRaw(),
       }
     }
   }, null, 2))
