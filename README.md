@@ -22,7 +22,9 @@ Accounts created:
   "ed25519": {
     "sender": {
       "accountId": "0.0.xxxxxxxx",
-      "privateKey": "302e..."
+      "privateKey": "302...",
+      "FungibleTokenId": "0.0.xxxxxxxx",
+      "NftTokenId": "0.0.xxxxxxxx"
     },
     "receiver": {
       "accountId": "0.0.xxxxxxxx",
@@ -32,11 +34,13 @@ Accounts created:
   "ecdsaWithAlias": {
     "sender": {
       "accountId": "0.0.xxxxxxxx",
-      "privateKey": "303..."
+      "privateKey": "...hexadecimal string of length 64...",
+      "FungibleTokenId": "0.0.xxxxxxxx",
+      "NftTokenId": "0.0.xxxxxxxx"
     },
     "receiver": {
       "accountId": "0.0.xxxxxxxx",
-      "privateKey": "303..."
+      "privateKey": "...hexadecimal string of length 64..."
     }
   }
 }
