@@ -34,7 +34,6 @@ const accountAndTokenCreation = async () => {
   client.setMinBackoff(10);
   client.setMaxBackoff(100);
   client.setMaxAttempts(50);
-  // client.setLogger(console);
   client.setOperator(myAccountId, myPrivateKey);
 
   /* -------------- Generate ED25519 Sender Account ---------------- */
@@ -144,8 +143,8 @@ const accountAndTokenCreation = async () => {
 
     // Create Fungible Token Type with a decimals of 1
     const createFTokenTxn = await new TokenCreateTransaction()
-      .setTokenName('CheddarToken')
-      .setTokenSymbol('CHDR')
+      .setTokenName('HederaFungible')
+      .setTokenSymbol('HFun')
       .setTokenType(TokenType.FungibleCommon)
       .setDecimals(1)
       .setInitialSupply(100)
@@ -161,6 +160,7 @@ const accountAndTokenCreation = async () => {
     // Get the receipt of the transaction
     const createFTokenTxnReceipt = await createFTokenTxnResponse.getReceipt(client);
     const createFTTokenStatus = createFTokenTxnReceipt.status.toString();
+    const createFTTokenId = createFTokenTxnReceipt.tokenId;
     console.log(`Fungible Token Creation was a ${createFTTokenStatus}`);
 
     /* -------------- Create Non Fungible Token ---------------- */
@@ -179,8 +179,8 @@ const accountAndTokenCreation = async () => {
     const supplyKeyForNFT = PrivateKey.generateED25519();
 
     const createNFTokenTxn = await new TokenCreateTransaction()
-      .setTokenName('Cookie')
-      .setTokenSymbol('CKE')
+      .setTokenName('HederaNFT')
+      .setTokenSymbol('HNFT')
       .setTokenType(TokenType.NonFungibleUnique)
       .setTreasuryAccountId(treasuryAccountId)
       .setSupplyKey(supplyKeyForNFT)
@@ -207,13 +207,15 @@ const accountAndTokenCreation = async () => {
     const mintNFTokenTxnReceipt = await mintNFTokenTxnResponse.getReceipt(client);
     const mintNFTokenStatus = mintNFTokenTxnReceipt.status.toString();
     console.log(`NFT Minting was a ${mintNFTokenStatus}`);
+
+    return [createFTTokenId, nfTokenId]
   }
 
   /* -------------- Create Tokens for ED25519 Sender ---------------- */
-  await createTokensForAccount(client, ed25519SenderAccountId, ed25519SenderPrivateKey);
+  const [ed25519FtTokenId, ed25519NftTokenId] = await createTokensForAccount(client, ed25519SenderAccountId, ed25519SenderPrivateKey);
 
   /* -------------- Create Tokens for ECDSA Sender ---------------- */
-  await createTokensForAccount(client, ecdsaSenderAccountId, ecdsaSenderPrivateKey);
+  const [ecdsaFtTokenId, ecdsaNftTokenId] = await createTokensForAccount(client, ecdsaSenderAccountId, ecdsaSenderPrivateKey);
 
   /* -------------- Print Account Info ---------------- */
   console.log(JSON.stringify({
@@ -221,6 +223,8 @@ const accountAndTokenCreation = async () => {
       sender: {
         accountId: ed25519SenderAccountId.toString(),
         privateKey: ed25519SenderPrivateKey.toString(),
+        FungibleTokenId: ed25519FtTokenId.toString(),
+        NftTokenId: ed25519NftTokenId.toString(),
       },
       receiver: {
         accountId: ed25519ReceiverAccountId.toString(),
@@ -231,6 +235,8 @@ const accountAndTokenCreation = async () => {
       sender: {
         accountId: ecdsaSenderAccountId.toString(),
         privateKey: ecdsaSenderPrivateKey.toStringRaw(),
+        FungibleTokenId: ecdsaFtTokenId.toString(),
+        NftTokenId: ecdsaNftTokenId.toString(),
       },
       receiver: {
         accountId: ecdsaReceiverAccountId.toString(),
