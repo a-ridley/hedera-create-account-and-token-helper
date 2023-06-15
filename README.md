@@ -10,7 +10,7 @@ Accounts created:
 
 ## How to Use
 1. Create a Hedera Testnet account at [portal.hedera.com](https://portal.hedera.com/register). Your account will receive 10,000 test HBAR every 24 hours.
-2. Rename the `.env.sample` file to `.env` and add the credentials from your Hedera Testnet account.
+2. Rename the `.env.example` file to `.env` and add the credentials from your Hedera Testnet account.
 3. In the projects root directory run `npm i`
 4. run `node index.js` to execute
 
