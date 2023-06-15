@@ -31,6 +31,7 @@ const accountAndTokenCreation = async () => {
   }
 
   const client = Client.forTestnet();
+  client.setDefaultMaxTransactionFee(new Hbar(100));
   client.setMinBackoff(10);
   client.setMaxBackoff(100);
   client.setMaxAttempts(50);
