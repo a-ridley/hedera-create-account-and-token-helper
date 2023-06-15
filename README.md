@@ -9,10 +9,25 @@ Accounts created:
 * Account 4: An ECDSA account with an alias that acts as a **Reciever**. This account has zero FT's and NFTs.
 
 ## How to Use
-1. Create a Hedera Testnet account at [portal.hedera.com](https://portal.hedera.com/register). Your account will receive 10,000 test HBAR every 24 hours.
-2. Rename the `.env.example` file to `.env` and add the credentials from your Hedera Testnet account.
-3. In the projects root directory run `npm i`
-4. run `node index.js` to execute
+1. Create a new directory
+2. Change into that directory
+3. Create a `.env` file in that directory and add the following fields:
+      ```shell
+      MY_ACCOUNT_ID=<enter your ed25519 account id>
+      MY_PRIVATE_KEY=<enter your ed25519 DER private key>
+      ```
+      Add your Hedera Testnet crednetials to the `.env`. Don't have one? Create one at [portal.hedera.com](https://portal.hedera.com/register). Your account will            receive    10,000 test HBAR every 24 hours.
+
+4. Execute `npx github:/a-ridley/hedera-create-account-and-token-helper`
+
+ ## Contributing
+
+Fork this repository, clone your forked repository, and then make changes there.
+
+For testing during local development follow the below steps:
+1. Rename the `.env.example` file to `.env` and add the credentials from your Hedera Testnet account
+2. In the projects root directory run `npm i`
+3. run `node index.js` to execute
 
 **Note: Private Keys should never be shared pubicly.**
 
