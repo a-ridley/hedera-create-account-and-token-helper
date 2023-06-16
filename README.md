@@ -18,7 +18,7 @@ Accounts created:
       ```
       Add your Hedera Testnet crednetials to the `.env`. Don't have one? Create one at [portal.hedera.com](https://portal.hedera.com/register). Your account will            receive    10,000 test HBAR every 24 hours.
 
-4. Execute `npx github:/a-ridley/hedera-create-account-and-token-helper`
+4. Execute `npx github:/hedera-dev/hedera-create-account-and-token-helper`
 
  ## Contributing
 
