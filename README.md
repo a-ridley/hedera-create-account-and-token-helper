@@ -29,7 +29,7 @@ For testing during local development follow the below steps:
 2. In the projects root directory run `npm i`
 3. run `node index.js` to execute
 
-**Note: Private Keys should never be shared pubicly.**
+**Note: Private Keys should never be shared publicly.**
 
 ## Sample Output
 ```JSON
